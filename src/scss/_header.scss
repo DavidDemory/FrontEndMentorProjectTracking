@@ -1,0 +1,157 @@
+.header {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 3.55rem 9.22rem;
+    @media (max-width: 640px) {
+        padding: 2.11rem 1.77rem;
+    }
+    &--top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    &--bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        visibility: hidden;
+        margin-top: 2rem;
+        position: absolute;
+        opacity: 0;
+        background-color: #fff;
+        width: 83%;
+        z-index: 10;
+        padding: 1.66rem 0;
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px rgba($color: $darkGrayishBlue, $alpha: .5);
+        transition: all 200ms ease-in-out;
+        &::before {
+            position: absolute;
+            bottom: 75px;
+            content: '';
+            display: block;
+            background-color: $grayishBlue;
+            width: 85%;
+            height: 1px;
+        }
+        & a {
+            font-size: 1rem;
+            color: $veryDarkBlue;
+            text-decoration: none;
+            letter-spacing: 1px;
+            &:not(:last-child) {
+                margin-bottom: 1.2rem;
+            }
+            &:last-child {
+                color: $grayishBlue;
+                margin-top: 1.65rem;
+            }
+        }
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            transition: all 200ms ease-in-out;
+        }
+    }
+    #header--burger {
+            display: none;
+            height: 32px;
+            width: 32px;
+            position: relative;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: .2s ease-in-out;
+            -moz-transition: .2s ease-in-out;
+            -o-transition: .2s ease-in-out;
+            transition: .2s ease-in-out;
+            cursor: pointer;
+
+            &.open span:nth-child(1) {
+                top: 15px;
+                -webkit-transform: rotate(135deg);
+                -moz-transform: rotate(135deg);
+                -o-transform: rotate(135deg);
+                transform: rotate(135deg);
+              }
+              
+              &.open span:nth-child(2) {
+                opacity: 0;
+                left: -60px;
+              }
+              
+              &.open span:nth-child(3) {
+                top: 15px;
+                -webkit-transform: rotate(-135deg);
+                -moz-transform: rotate(-135deg);
+                -o-transform: rotate(-135deg);
+                transform: rotate(-135deg);
+              }
+            & span {
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background-color: #000;
+                left: 0;
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+                -webkit-transition: .25s ease-in-out;
+                -moz-transition: .25s ease-in-out;
+                -o-transition: .25s ease-in-out;
+                transition: .25s ease-in-out;
+                &:nth-child(1) {
+                    top: 5px;
+                }
+                &:nth-child(2) {
+                    top: 15px;
+                }
+                &:nth-child(3) {
+                    top: 25px;
+                }
+            }
+        @media (max-width: 640px) {
+            display: block;
+        }
+    }
+    &--links {
+        display: flex;
+        align-items: center;
+        @media (max-width: 640px) {
+            display: none;
+        }
+        & a {
+            font-size: 0.77rem;
+            color: $veryDarkBlue;
+            text-decoration: none;
+            letter-spacing: 1px;
+            &:hover {
+                text-decoration: underline;
+            }
+            &:not(:last-child) {
+                margin-right: 2.38rem;
+            }
+            &:last-child {
+                position: relative;
+                color: $grayishBlue;
+                margin-left: 2.94rem;
+                &::before {
+                    position: absolute;
+                    content : '';
+                    background-color: $grayishBlue;
+                    display: block;
+                    height: 7px;
+                    width: 7px;
+                    border-radius: 50%;
+                    left: -2.55rem;
+                    top: 6px;
+                }
+            }
+        }
+    }
+}
